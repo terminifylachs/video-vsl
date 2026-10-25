@@ -1,0 +1,67 @@
+/* Terminify Markenstil, erzeugt aus den Tokens */
+:root, [data-theme="light"] {
+  --surface: #ffffff;
+  --surface-alt: #f2ede3;
+  --surface-raised: #ffffff;
+  --line: #e2e5ec;
+  --ink: #14203f;
+  --ink-muted: #5b6680;
+  --brand: #1b2d5c;
+  --brand-strong: #132247;
+  --on-brand: #f4f1ec;
+  --mark-old: #7a8296;
+  --focus: #1b2d5c;
+  --tinte: #1b2d5c;
+  --creme: #f2ede3;
+  --weiss: #f4f1ec;
+  --shadow-card: 0 1px 2px rgba(20,32,63,.06), 0 12px 32px rgba(20,32,63,.08);
+}
+[data-theme="tinte"] {
+  --surface: #1b2d5c;
+  --surface-alt: #15244b;
+  --surface-raised: #22376b;
+  --line: #33487f;
+  --ink: #f4f1ec;
+  --ink-muted: #b8c1d9;
+  --brand: #f4f1ec;
+  --brand-strong: #ffffff;
+  --on-brand: #1b2d5c;
+  --mark-old: #8f9ab8;
+  --focus: #f4f1ec;
+  --tinte: #1b2d5c;
+  --creme: #f2ede3;
+  --weiss: #f4f1ec;
+  --shadow-card: none;
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-28: 112px;
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-pill: 999px;
+  --container: 1152px;
+  --container-schmal: 880px;
+  --prosa: 680px;
+  --kopfzeile: 72px;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: Inter, system-ui, sans-serif;
+}
+.display-xl { font-family: var(--font-display); font-size: 64px; line-height: 1.06; font-weight: 400; letter-spacing: -0.01em; }
+.display-xl-mobil { font-family: var(--font-display); font-size: 40px; line-height: 1.1; font-weight: 400; letter-spacing: -0.01em; }
+.display-l { font-family: var(--font-display); font-size: 48px; line-height: 1.12; font-weight: 400; }
+.display-m { font-family: var(--font-display); font-size: 30px; line-height: 1.2; font-weight: 400; }
+.akzent { font-family: var(--font-display); font-size: 64px; line-height: 1.06; font-weight: 400; font-style: italic; }
+.name { font-family: var(--font-display); font-size: 28px; line-height: 1.15; font-weight: 400; font-style: italic; }
+.lead { font-family: var(--font-sans); font-size: 20px; line-height: 32px; font-weight: 400; }
+.body { font-family: var(--font-sans); font-size: 17px; line-height: 28px; font-weight: 400; }
+.body-strong { font-family: var(--font-sans); font-size: 17px; line-height: 28px; font-weight: 600; }
+.small { font-family: var(--font-sans); font-size: 14px; line-height: 22px; font-weight: 400; }
+.label { font-family: var(--font-sans); font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.18em; }
+.button { font-family: var(--font-sans); font-size: 16px; line-height: 20px; font-weight: 600; }

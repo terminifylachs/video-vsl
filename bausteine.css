@@ -1,0 +1,89 @@
+/* Schriften werden per <link> im <head> geladen (statt @import), damit sie parallel zum CSS laden. */
+
+/* Terminify Bausteine. Alle Farben, Abstände und Radien kommen aus den Tokens. */
+.tf-flaeche { background: var(--surface); color: var(--ink); font-family: var(--font-sans); padding: var(--space-8); }
+.tf-flaeche *, .tf-flaeche *::before, .tf-flaeche *::after { box-sizing: border-box; }
+.tf-nur-tinte { display: none; }
+[data-theme="tinte"] .tf-nur-hell { display: none; }
+[data-theme="tinte"] .tf-nur-tinte { display: block; }
+
+/* Kopfzeile */
+.tf-kopf { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6);
+  height: var(--kopfzeile); padding-inline: var(--space-8); background: var(--surface); border-bottom: 1px solid var(--line); }
+.tf-kopf__marke { height: 28px; width: auto; }
+.tf-kopf__nav { display: flex; gap: var(--space-8); color: var(--ink-muted); }
+.tf-kopf__nav a { color: inherit; text-decoration: none; }
+.tf-kopf__nav a:hover { color: var(--ink); }
+@media (max-width: 767px) { .tf-kopf__nav { display: none; } .tf-kopf { padding-inline: var(--space-4); } }
+
+/* Button */
+.tf-btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; border-radius: var(--radius-sm);
+  background: var(--brand); color: var(--on-brand); border: 1px solid var(--brand); text-decoration: none;
+  font-family: var(--font-sans); font-size: 16px; line-height: 20px; font-weight: 600; cursor: pointer;
+  transition: background-color .15s ease; }
+.tf-btn:hover { background: var(--brand-strong); border-color: var(--brand-strong); }
+.tf-btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.tf-btn--zwei { background: transparent; color: var(--brand); }
+.tf-btn--zwei:hover { background: var(--surface-alt); border-color: var(--brand); }
+.tf-btn--klein { padding: 10px 18px; font-size: 14px; }
+.tf-pfeil { transition: transform .15s ease; }
+.tf-btn:hover .tf-pfeil { transform: translateX(3px); }
+@media (prefers-reduced-motion: reduce) { .tf-btn, .tf-pfeil { transition: none; } .tf-btn:hover .tf-pfeil { transform: none; } }
+.tf-reihe { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; }
+
+/* Dachzeile und Überschrift */
+.tf-dachzeile { margin: 0; color: var(--brand); text-transform: uppercase; }
+.tf-titel { margin: 0; color: var(--ink); font-family: var(--font-display); text-wrap: balance; }
+.tf-akzent { font-style: italic; color: var(--brand); }
+.tf-unterzeile { margin: 0; color: var(--ink-muted); max-width: var(--prosa); }
+.tf-mitte { display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-4); }
+@media (max-width: 767px) { .tf-titel.display-xl { font-size: 40px; line-height: 1.1; } .tf-titel.display-l { font-size: 34px; } }
+
+/* Videorahmen */
+.tf-video { position: relative; width: 100%; max-width: var(--container-schmal); aspect-ratio: 16 / 9; margin-inline: auto;
+  border-radius: var(--radius-md); overflow: hidden; background: var(--tinte); box-shadow: var(--shadow-card); }
+.tf-video__bild { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tf-play { position: absolute; inset: 0; margin: auto; width: 76px; height: 76px; border-radius: var(--radius-pill);
+  border: 0; background: var(--weiss); cursor: pointer; display: grid; place-items: center; }
+.tf-play::after { content: ""; margin-left: 5px; border-style: solid; border-width: 13px 0 13px 21px;
+  border-color: transparent transparent transparent var(--tinte); }
+.tf-play:focus-visible { outline: 2px solid var(--weiss); outline-offset: 3px; }
+
+/* Rezensionen */
+.tf-rezensionen { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-6); }
+@media (max-width: 900px) { .tf-rezensionen { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.tf-rezension { margin: 0; display: flex; flex-direction: column; gap: var(--space-3); }
+.tf-rezension__bild { position: relative; aspect-ratio: 3 / 4; border-radius: var(--radius-md); overflow: hidden; background: var(--tinte); }
+.tf-rezension__bild img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tf-rezension__bild .tf-play { width: 52px; height: 52px; inset: 0 0 auto auto; margin: var(--space-3); }
+.tf-rezension__bild .tf-play::after { border-width: 9px 0 9px 14px; margin-left: 3px; }
+.tf-rezension__zahl { margin: 0; color: var(--ink-muted); text-transform: uppercase; }
+
+/* Vergleich alter und neuer Funnel */
+.tf-vergleich { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6); }
+@media (max-width: 767px) { .tf-vergleich { grid-template-columns: 1fr; } }
+.tf-karte { display: flex; flex-direction: column; gap: var(--space-4); padding: var(--space-8); border-radius: var(--radius-md);
+  background: var(--surface-raised); color: var(--ink); border: 1px solid var(--line); }
+.tf-karte--neu { background: var(--surface); border-color: var(--surface); box-shadow: var(--shadow-card); }
+.tf-karte .tf-zeit { margin: 0; color: var(--ink-muted); text-transform: uppercase; }
+.tf-karte--neu .tf-zeit { color: var(--brand); }
+.tf-karte h3 { margin: 0; }
+.tf-karte p { margin: 0; color: var(--ink-muted); }
+.tf-liste { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-3); }
+.tf-liste li { display: grid; grid-template-columns: 20px 1fr; gap: var(--space-3); align-items: start; }
+.tf-liste svg { width: 20px; height: 20px; margin-top: 4px; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.tf-liste--alt svg { stroke: var(--mark-old); }
+.tf-liste--alt li { color: var(--ink-muted); }
+.tf-liste--neu svg { stroke: var(--brand); }
+
+/* Fußbereich */
+.tf-fuss { background: var(--surface); color: var(--ink); padding: var(--space-12) var(--space-8); display: grid; gap: var(--space-8); }
+.tf-fuss__oben { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-8); }
+.tf-fuss__marke { height: 28px; width: auto; }
+.tf-fuss__mission { margin: var(--space-4) 0 0; max-width: 46ch; color: var(--ink-muted); }
+.tf-fuss__recht { display: flex; flex-direction: column; gap: var(--space-2); }
+.tf-fuss__titel { color: var(--ink-muted); text-transform: uppercase; }
+.tf-fuss__recht a { color: var(--ink); text-decoration: none; }
+.tf-fuss__recht a:hover { text-decoration: underline; }
+.tf-fuss__unten { border-top: 1px solid var(--line); padding-top: var(--space-6); color: var(--ink-muted); display: grid; gap: var(--space-3); }
+.tf-fuss__unten p { margin: 0; }
