@@ -45,8 +45,8 @@
 
   /* Belege */
   .belege { display: flex; justify-content: center; align-items: center; gap: var(--space-4); margin-top: var(--space-12); }
-  .belege__gesichter { display: flex; }
-  .belege__gesichter img { width: 44px; height: 44px; border-radius: var(--radius-pill); object-fit: cover; border: 2px solid var(--surface-alt); }
+  .belege__gesichter { display: flex; flex-shrink: 0; }
+  .belege__gesichter img { flex-shrink: 0; width: 44px; height: 44px; border-radius: var(--radius-pill); object-fit: cover; border: 2px solid var(--surface-alt); }
   .belege__gesichter img + img { margin-left: -12px; }
   .belege__text { margin: 0; }
   .belege__zeile { display: flex; align-items: center; gap: var(--space-2); margin: 2px 0 0; color: var(--ink-muted); }
@@ -61,6 +61,8 @@
     .kopf { padding-block: var(--space-12) var(--space-8); }
     .kopf .tf-titel.display-xl { font-size: clamp(32px, 10.4vw, 40px); }
     .buchung { padding-block: var(--space-8) var(--space-16); }
+    .belege { flex-direction: column; gap: var(--space-3); margin-top: var(--space-8); text-align: center; }
+    .belege__zeile { justify-content: center; flex-wrap: wrap; }
     .tf-fuss { padding-inline: var(--space-4); }
   }
 </style>
@@ -126,7 +128,7 @@
       <img class="tf-fuss__marke" src="../assets/wortmarke_weiss.svg" alt="Terminify" width="104" height="28">
       <p class="tf-fuss__mission body">Unsere Mission: 1.000 Fitnesscoaches dabei helfen, jeweils 1.000 Coaching-Kunden zu gewinnen. Damit wir gemeinsam 1 Million Menschen im DACH-Raum fitter, gesünder und glücklicher machen.</p>
     </div>
-    <nav class="tf-fuss__recht small" aria-label="Rechtliches"><span class="tf-fuss__titel label">Rechtliches</span><a href="/">Zur Startseite</a><a href="https://vsl.terminify.ai/impressum/">Impressum</a><a href="https://vsl.terminify.ai/datenschutz/">Datenschutz</a><a href="https://vsl.terminify.ai/agb/">AGB</a></nav>
+    <nav class="tf-fuss__recht small" aria-label="Rechtliches"><span class="tf-fuss__titel label">Rechtliches</span><a href="/">Zur Startseite</a><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><a href="/agb/">AGB</a></nav>
   </div>
   <div class="tf-fuss__unten small">
     <p>© 2026 Terminify · M &amp; H Consulting GmbH</p>
@@ -150,7 +152,7 @@
 </style>
 <div id="tcb" role="dialog" aria-label="Cookie-Einwilligung">
   <div class="tcb-card">
-    <p class="small">Wir nutzen Cookies &amp; Tracking-Technologien (u.a. Meta-Pixel), um Marketing zu messen und die Website zu verbessern. Mit &#8222;Akzeptieren&#8220; willigst du gem. Art. 6 Abs. 1 lit. a DSGVO ein &#8211; freiwillig und jederzeit widerruflich. Details in der <a href="https://vsl.terminify.ai/datenschutz/">Datenschutzerkl&auml;rung</a>.</p>
+    <p class="small">Wir nutzen Cookies &amp; Tracking-Technologien (u.a. Meta-Pixel), um Marketing zu messen und die Website zu verbessern. Mit &#8222;Akzeptieren&#8220; willigst du gem. Art. 6 Abs. 1 lit. a DSGVO ein &#8211; freiwillig und jederzeit widerruflich. Details in der <a href="/datenschutz/">Datenschutzerkl&auml;rung</a>.</p>
     <div class="tcb-btns">
       <button class="tf-btn tf-btn--zwei tcb-reject" id="tcb-reject" type="button">Ablehnen</button>
       <button class="tf-btn tcb-accept" id="tcb-accept" type="button">Akzeptieren</button>

@@ -1,0 +1,38 @@
+/* Impressum, Datenschutz, AGB: ruhiger Lesesatz in Prosabreite, sonst die Bausteine */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--surface); color: var(--ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+.container { width: 100%; max-width: calc(var(--container) + 2 * var(--space-8)); margin-inline: auto; padding-inline: var(--space-8); }
+
+.tf-kopf { justify-content: center; }
+.tf-kopf__logo { display: flex; }
+
+.recht-kopf { padding-block: var(--space-16) var(--space-12); }
+.recht-kopf__stand { margin: 0; color: var(--ink-muted); }
+
+.recht { padding-bottom: var(--space-28); }
+.recht__text { max-width: var(--prosa); margin-inline: auto; }
+.recht__text > :first-child { margin-top: 0; }
+.recht__text h2 { margin: var(--space-12) 0 var(--space-4); font-family: var(--font-display); font-size: 30px; line-height: 1.2; font-weight: 400; color: var(--ink); text-wrap: balance; }
+.recht__text h3 { margin: var(--space-8) 0 var(--space-2); font-size: 17px; line-height: 28px; font-weight: 600; }
+.recht__text p { margin: 0 0 var(--space-4); }
+.recht__text ul { margin: 0 0 var(--space-4); padding-left: 1.25em; }
+.recht__text li { margin-bottom: var(--space-2); }
+.recht__text li::marker { color: var(--ink-muted); }
+.recht__text strong { font-weight: 600; }
+.recht__text a { color: var(--brand); text-decoration: underline; text-underline-offset: 2px; overflow-wrap: anywhere; }
+.recht__text .addr { margin: 0 0 var(--space-6); padding: var(--space-6); background: var(--surface-alt); border-radius: var(--radius-md); }
+.recht__text .recht__quelle { margin-top: var(--space-8); color: var(--ink-muted); }
+
+.tf-fuss { padding: var(--space-16) max(var(--space-8), calc((100% - var(--container)) / 2)); }
+.tf-fuss__recht a[aria-current="page"] { text-decoration: underline; }
+
+@media (max-width: 767px) {
+  .container { padding-inline: var(--space-4); }
+  .recht-kopf { padding-block: var(--space-12) var(--space-8); }
+  .recht { padding-bottom: var(--space-16); }
+  .recht__text h2 { margin-top: var(--space-8); font-size: 24px; }
+  .recht__text .addr { padding: var(--space-4); }
+  .tf-fuss { padding-inline: var(--space-4); }
+}
