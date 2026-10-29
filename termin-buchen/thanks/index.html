@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Termin gebucht – Terminify</title>
+<meta name="description" content="Dein Strategie-Call ist gebucht. Wir freuen uns auf das Gespräch.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon_blau.svg">
+
+<!-- Tracking (Meta-Pixel + VSL) wird erst nach Cookie-Einwilligung geladen (siehe Consent-Banner am Seitenende) -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../tokens.css">
+<link rel="stylesheet" href="../../bausteine.css">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; background: var(--surface); color: var(--ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .tf-titel { font-variant-numeric: lining-nums; }
+  .tf-mitte .tf-unterzeile { text-wrap: balance; }
+
+  .container { width: 100%; max-width: calc(var(--container) + 2 * var(--space-8)); margin-inline: auto; padding-inline: var(--space-8); }
+
+  .tf-kopf { justify-content: center; }
+  .tf-kopf__logo { display: flex; }
+
+  /* Bestätigung */
+  .bestaetigung { padding-block: var(--space-28); }
+  .bestaetigung .tf-titel { max-width: 1040px; }
+  .bestaetigung .tf-akzent { white-space: nowrap; }
+  .haken { display: grid; place-items: center; width: 80px; height: 80px; margin-bottom: var(--space-4); border-radius: var(--radius-pill); background: var(--surface-alt); }
+  .haken svg { width: 36px; height: 36px; fill: none; stroke: var(--brand); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .bestaetigung .tf-btn { margin-top: var(--space-4); }
+
+  .tf-fuss { padding: var(--space-16) max(var(--space-8), calc((100% - var(--container)) / 2)); }
+
+  @media (max-width: 767px) {
+    .container { padding-inline: var(--space-4); }
+    .bestaetigung { padding-block: var(--space-16); }
+    .bestaetigung .tf-titel.display-xl { font-size: clamp(32px, 10.4vw, 40px); }
+    .tf-fuss { padding-inline: var(--space-4); }
+  }
+</style>
+</head>
+<body>
+
+<header class="tf-kopf">
+  <a class="tf-kopf__logo" href="/" aria-label="Terminify, zur Startseite"><img class="tf-kopf__marke" src="../../assets/wortmarke_blau.svg" alt="Terminify" width="104" height="28"></a>
+</header>
+
+<main>
+  <section class="bestaetigung">
+    <div class="container tf-mitte">
+      <div class="haken" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></div>
+      <h1 class="tf-titel display-xl">Dein <span class="tf-akzent">Strategie-Call</span> ist gebucht.</h1>
+      <p class="tf-unterzeile lead">Du bekommst gleich eine Bestätigung per E-Mail mit Kalender-Einladung. Wir freuen uns auf das Gespräch.</p>
+      <a class="tf-btn tf-btn--zwei" href="/">Zur Startseite</a>
+    </div>
+  </section>
+</main>
+
+<footer class="tf-fuss" data-theme="blau">
+  <div class="tf-fuss__oben">
+    <div>
+      <img class="tf-fuss__marke" src="../../assets/wortmarke_weiss.svg" alt="Terminify" width="104" height="28">
+      <p class="tf-fuss__mission body">Unsere Mission: 1.000 Fitnesscoaches dabei helfen, jeweils 1.000 Coaching-Kunden zu gewinnen. Damit wir gemeinsam 1 Million Menschen im DACH-Raum fitter, gesünder und glücklicher machen.</p>
+    </div>
+    <nav class="tf-fuss__recht small" aria-label="Rechtliches"><span class="tf-fuss__titel label">Rechtliches</span><a href="/">Zur Startseite</a><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><a href="/agb/">AGB</a></nav>
+  </div>
+  <div class="tf-fuss__unten small">
+    <p>© 2026 Terminify · M &amp; H Consulting GmbH</p>
+    <p>Haftungsausschluss: Die hier aufgeführten Ergebnisse sind in der Regel nur erreichbar, wenn du an einem kostenfreien Strategie-Call teilnimmst und unser System korrekt implementierst. Kein „schnell reich werden“-Programm. Die Angebote richten sich ausdrücklich an Gewerbetreibende und Unternehmer im Sinne des §14 BGB.</p>
+  </div>
+</footer>
+
+
+<!-- Cookie Consent (DSGVO Art. 6 (1) a / TTDSG §25) -->
+<style>
+  #tcb{position:fixed;left:0;right:0;bottom:0;z-index:2147483000;display:none;padding:var(--space-3)}
+  #tcb.tcb-show{display:block}
+  #tcb .tcb-card{max-width:460px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:var(--space-6)}
+  #tcb p{margin:0 0 var(--space-4);color:var(--ink-muted)}
+  #tcb a{color:var(--brand);text-decoration:underline;text-underline-offset:2px}
+  #tcb .tcb-btns{display:flex;gap:var(--space-2);flex-direction:column}
+  @media(min-width:480px){#tcb .tcb-btns{flex-direction:row}}
+  #tcb .tf-btn{flex:1;justify-content:center;padding:12px 16px;font-size:14px}
+</style>
+<div id="tcb" role="dialog" aria-label="Cookie-Einwilligung">
+  <div class="tcb-card">
+    <p class="small">Wir nutzen Cookies &amp; Tracking-Technologien (u.a. Meta-Pixel), um Marketing zu messen und die Website zu verbessern. Mit &#8222;Akzeptieren&#8220; willigst du gem. Art. 6 Abs. 1 lit. a DSGVO ein &#8211; freiwillig und jederzeit widerruflich. Details in der <a href="/datenschutz/">Datenschutzerkl&auml;rung</a>.</p>
+    <div class="tcb-btns">
+      <button class="tf-btn tf-btn--zwei tcb-reject" id="tcb-reject" type="button">Ablehnen</button>
+      <button class="tf-btn tcb-accept" id="tcb-accept" type="button">Akzeptieren</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY='terminify_consent_v1', el=document.getElementById('tcb');
+  function getEventId(){
+    try {
+      var p = new URLSearchParams(window.location.search);
+      var eid = p.get('eid');
+      if (eid && eid.trim()) return eid.trim();
+    } catch(e) {}
+    // Fallback: per-pageview unique ID
+    try {
+      if (window.crypto && typeof window.crypto.randomUUID === 'function') {
+        return 'tfb_' + window.crypto.randomUUID();
+      }
+    } catch(e) {}
+    return 'tfb_' + Date.now() + '_' + Math.random().toString(36).slice(2,10);
+  }
+  function loadTracking(){
+    if(window.__tcbLoaded)return; window.__tcbLoaded=true;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','989464427134148');
+    fbq('track','PageView');
+    fbq('track','Schedule', {}, { eventID: getEventId() });
+    var sc=document.createElement('script');sc.src='/track.js';sc.async=true;document.head.appendChild(sc);
+  }
+  try{
+    var c=localStorage.getItem(KEY);
+    if(c==='accepted'){loadTracking();}
+    else if(c!=='rejected'){el.classList.add('tcb-show');}
+  }catch(e){el.classList.add('tcb-show');}
+  var a=document.getElementById('tcb-accept'),r=document.getElementById('tcb-reject');
+  a.onclick=function(){try{localStorage.setItem(KEY,'accepted')}catch(e){}el.classList.remove('tcb-show');loadTracking();};
+  r.onclick=function(){try{localStorage.setItem(KEY,'rejected')}catch(e){}el.classList.remove('tcb-show');};
+})();
+</script>
+
+</body>
+</html>

@@ -6,7 +6,7 @@
 <title>Terminify – Offizielle Website</title>
 <meta name="description" content="Terminify transformiert Coaches und Agenturen in vollautomatisierte Termin-Maschinen. KI-Qualifikation, No-Show-Rate unter 12%, planbarer Kalender.">
 <meta name="theme-color" content="#ffffff">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="assets/favicon_blau.svg">
 
 <!-- Tracking (Meta-Pixel + VSL) wird erst nach Cookie-Einwilligung geladen (siehe Consent-Banner am Seitenende) -->
 
@@ -26,6 +26,7 @@
   body { margin: 0; background: var(--surface); color: var(--ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
   img { max-width: 100%; }
   a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .tf-titel { font-variant-numeric: lining-nums; }
 
   /* Raster */
   .container { width: 100%; max-width: calc(var(--container) + 2 * var(--space-8)); margin-inline: auto; padding-inline: var(--space-8); }
@@ -60,10 +61,10 @@
   .vdialog[open] { display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-3); }
   .vdialog::backdrop { background: rgba(20, 32, 63, .94); }
   .vdialog__rahmen { position: relative; width: min(calc(100vw - 2 * var(--space-4)), calc((100vh - 120px) * 9 / 16)); aspect-ratio: 9 / 16;
-    border-radius: var(--radius-md); overflow: hidden; background: var(--tinte); }
+    border-radius: var(--radius-md); overflow: hidden; background: var(--blau); }
   .vdialog__rahmen wistia-player { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
   .vdialog__zu { width: 44px; height: 44px; border: 0; border-radius: var(--radius-pill); background: var(--weiss); cursor: pointer; display: grid; place-items: center; }
-  .vdialog__zu svg { width: 20px; height: 20px; fill: none; stroke: var(--tinte); stroke-width: 2; stroke-linecap: round; }
+  .vdialog__zu svg { width: 20px; height: 20px; fill: none; stroke: var(--blau); stroke-width: 2; stroke-linecap: round; }
   .vdialog__zu:focus-visible { outline-color: var(--weiss); }
 
   /* Unser System */
@@ -97,7 +98,7 @@
 <body>
 
 <header class="tf-kopf">
-  <a class="tf-kopf__logo" href="#top" aria-label="Terminify, zum Seitenanfang"><img class="tf-kopf__marke" src="assets/wortmarke_tinte.svg" alt="Terminify" width="104" height="28"></a>
+  <a class="tf-kopf__logo" href="#top" aria-label="Terminify, zum Seitenanfang"><img class="tf-kopf__marke" src="assets/wortmarke_blau.svg" alt="Terminify" width="104" height="28"></a>
   <nav class="tf-kopf__nav small" aria-label="Seitennavigation"><a href="#video">Erklärvideo</a><a href="#rezensionen">Rezensionen</a><a href="#system">Unser System</a></nav>
   <a class="tf-btn tf-btn--klein" href="/termin-buchen/">Termin buchen <span class="tf-pfeil" aria-hidden="true">→</span></a>
 </header>
@@ -113,7 +114,7 @@
       <div id="video" class="tf-video">
         <script src="https://fast.wistia.com/player.js" async></script>
         <script src="https://fast.wistia.com/embed/a4hymsr18r.js" async type="module"></script>
-        <wistia-player media-id="a4hymsr18r" aspect="1.7777777777777777" big-play-button="false" player-color="1b2d5c"></wistia-player>
+        <wistia-player media-id="a4hymsr18r" aspect="1.7777777777777777" big-play-button="false" player-color="1D49E8"></wistia-player>
         <button class="tf-play" type="button" aria-label="Erklärvideo abspielen"></button>
       </div>
 
@@ -134,35 +135,35 @@
 
       <div class="tf-rezensionen">
         <figure class="tf-rezension einblenden" data-wistia="5uns77a9c1" data-name="Leon Walter">
-          <div class="tf-rezension__bild"><img src="assets/rezension_leon_walter.webp" alt="Rezension von Leon Walter" width="600" height="800" loading="lazy" decoding="async"><button class="tf-play" type="button" aria-label="Video von Leon Walter abspielen"></button></div>
+          <div class="tf-rezension__bild"><img src="assets/rezension_leon_walter_blau.webp" alt="Rezension von Leon Walter" width="600" height="800" loading="lazy" decoding="async"><button class="tf-play" type="button" aria-label="Video von Leon Walter abspielen"></button></div>
           <figcaption class="tf-rezension__zahl label">102.000 Abonnenten</figcaption>
         </figure>
         <figure class="tf-rezension einblenden" data-wistia="5qnsm8tnjp" data-name="Florian Staudt">
-          <div class="tf-rezension__bild"><img src="assets/rezension_florian_staudt.webp" alt="Rezension von Florian Staudt" width="600" height="800" loading="lazy" decoding="async"><button class="tf-play" type="button" aria-label="Video von Florian Staudt abspielen"></button></div>
+          <div class="tf-rezension__bild"><img src="assets/rezension_florian_staudt_blau.webp" alt="Rezension von Florian Staudt" width="600" height="800" loading="lazy" decoding="async"><button class="tf-play" type="button" aria-label="Video von Florian Staudt abspielen"></button></div>
           <figcaption class="tf-rezension__zahl label">267.000 Abonnenten</figcaption>
         </figure>
         <figure class="tf-rezension einblenden" data-wistia="vbpoyxro0d" data-name="Patrick Parchment">
-          <div class="tf-rezension__bild"><img src="assets/rezension_patrick_parchment.webp" alt="Rezension von Patrick Parchment" width="600" height="800" loading="lazy" decoding="async"><button class="tf-play" type="button" aria-label="Video von Patrick Parchment abspielen"></button></div>
+          <div class="tf-rezension__bild"><img src="assets/rezension_patrick_parchment_blau.webp" alt="Rezension von Patrick Parchment" width="600" height="800" loading="lazy" decoding="async"><button class="tf-play" type="button" aria-label="Video von Patrick Parchment abspielen"></button></div>
           <figcaption class="tf-rezension__zahl label">66.000 Abonnenten</figcaption>
         </figure>
         <figure class="tf-rezension einblenden" data-wistia="gdl3c06kyu" data-name="Jendrik Reese">
-          <div class="tf-rezension__bild"><img src="assets/rezension_jendrik_reese.webp" alt="Rezension von Jendrik Reese" width="600" height="800" loading="lazy" decoding="async"><button class="tf-play" type="button" aria-label="Video von Jendrik Reese abspielen"></button></div>
+          <div class="tf-rezension__bild"><img src="assets/rezension_jendrik_reese_blau.webp" alt="Rezension von Jendrik Reese" width="600" height="800" loading="lazy" decoding="async"><button class="tf-play" type="button" aria-label="Video von Jendrik Reese abspielen"></button></div>
           <figcaption class="tf-rezension__zahl label">148.000 Abonnenten</figcaption>
         </figure>
         <figure class="tf-rezension einblenden" data-wistia="qpdfvugjri" data-name="Josua Maria">
-          <div class="tf-rezension__bild"><img src="assets/rezension_josua_maria.webp" alt="Rezension von Josua Maria" width="600" height="800" loading="lazy" decoding="async"><button class="tf-play" type="button" aria-label="Video von Josua Maria abspielen"></button></div>
+          <div class="tf-rezension__bild"><img src="assets/rezension_josua_maria_blau.webp" alt="Rezension von Josua Maria" width="600" height="800" loading="lazy" decoding="async"><button class="tf-play" type="button" aria-label="Video von Josua Maria abspielen"></button></div>
           <figcaption class="tf-rezension__zahl label">196.000 Abonnenten</figcaption>
         </figure>
         <figure class="tf-rezension einblenden" data-wistia="0k9na72fru" data-name="Nico Koziollek">
-          <div class="tf-rezension__bild"><img src="assets/rezension_nico_koziollek.webp" alt="Rezension von Nico Koziollek" width="600" height="800" loading="lazy" decoding="async"><button class="tf-play" type="button" aria-label="Video von Nico Koziollek abspielen"></button></div>
+          <div class="tf-rezension__bild"><img src="assets/rezension_nico_koziollek_blau.webp" alt="Rezension von Nico Koziollek" width="600" height="800" loading="lazy" decoding="async"><button class="tf-play" type="button" aria-label="Video von Nico Koziollek abspielen"></button></div>
           <figcaption class="tf-rezension__zahl label">38.000 Abonnenten</figcaption>
         </figure>
         <figure class="tf-rezension einblenden" data-wistia="9ip8bw27qt" data-name="Maurice Darnel">
-          <div class="tf-rezension__bild"><img src="assets/rezension_maurice_darnel.webp" alt="Rezension von Maurice Darnel" width="600" height="800" loading="lazy" decoding="async"><button class="tf-play" type="button" aria-label="Video von Maurice Darnel abspielen"></button></div>
+          <div class="tf-rezension__bild"><img src="assets/rezension_maurice_darnel_blau.webp" alt="Rezension von Maurice Darnel" width="600" height="800" loading="lazy" decoding="async"><button class="tf-play" type="button" aria-label="Video von Maurice Darnel abspielen"></button></div>
           <figcaption class="tf-rezension__zahl label">61.000 Abonnenten</figcaption>
         </figure>
         <figure class="tf-rezension einblenden" data-wistia="icjq8astqw" data-name="Marco Boldt">
-          <div class="tf-rezension__bild"><img src="assets/rezension_marco_boldt.webp" alt="Rezension von Marco Boldt" width="600" height="800" loading="lazy" decoding="async"><button class="tf-play" type="button" aria-label="Video von Marco Boldt abspielen"></button></div>
+          <div class="tf-rezension__bild"><img src="assets/rezension_marco_boldt_blau.webp" alt="Rezension von Marco Boldt" width="600" height="800" loading="lazy" decoding="async"><button class="tf-play" type="button" aria-label="Video von Marco Boldt abspielen"></button></div>
           <figcaption class="tf-rezension__zahl label">18.000 Abonnenten</figcaption>
         </figure>
       </div>
@@ -197,7 +198,7 @@
           </ul>
         </article>
 
-        <article class="tf-karte tf-karte--neu einblenden" data-theme="tinte">
+        <article class="tf-karte tf-karte--neu einblenden" data-theme="blau">
           <p class="tf-zeit label">Ab 2026</p>
           <h3 class="tf-titel display-m">Unser Chatbot-Funnel</h3>
           <p class="body">Ein KI-Setter liefert planbar mehr Termine bei einem Bruchteil der Kosten.</p>
@@ -226,7 +227,7 @@
 </main>
 
 <!-- FOOTER -->
-<footer class="tf-fuss" data-theme="tinte">
+<footer class="tf-fuss" data-theme="blau">
   <div class="tf-fuss__oben">
     <div>
       <img class="tf-fuss__marke" src="assets/wortmarke_weiss.svg" alt="Terminify" width="104" height="28">
@@ -300,7 +301,7 @@
       player.setAttribute('media-id', karte.getAttribute('data-wistia'));
       player.setAttribute('aspect', '0.5625');
       player.setAttribute('autoplay', 'true');
-      player.setAttribute('player-color', '1b2d5c');
+      player.setAttribute('player-color', '1D49E8');
       rahmen.appendChild(player);
       dialog.setAttribute('aria-label', 'Video von ' + karte.getAttribute('data-name'));
       dialog.showModal();

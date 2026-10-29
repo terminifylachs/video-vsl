@@ -2,6 +2,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 body { margin: 0; background: var(--surface); color: var(--ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
 a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.tf-titel, .recht__text h2 { font-variant-numeric: lining-nums; }
 
 .container { width: 100%; max-width: calc(var(--container) + 2 * var(--space-8)); margin-inline: auto; padding-inline: var(--space-8); }
 
