@@ -1,0 +1,122 @@
+<!--
+  Terminify Markenstil für den GHL-Buchungskalender (96gJNxO6rzFCLXnYNeNl).
+  Diesen Block komplett in GHL einfügen: Kalender bearbeiten > Erweiterte Einstellungen >
+  Widget-Erscheinungsbild > Benutzerdefinierten Code einfügen.
+  GHL hängt ihn beim Laden ins Widget, darum wirkt das CSS auch im iframe auf /termin-buchen/.
+  Die Werte entsprechen tokens.css. Der Unterstrich im Dateinamen hält die Datei aus GitHub Pages heraus.
+-->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<script>
+  /* Eingebettet zeichnet die Seite die Karte, das Widget liegt flach darin */
+  if (window.self !== window.top) document.documentElement.classList.add('tf-eingebettet');
+</script>
+<style>
+  html:root {
+    --tf-surface: #ffffff;
+    --tf-surface-alt: #f2ede3;
+    --tf-line: #e2e5ec;
+    --tf-ink: #14203f;
+    --tf-ink-muted: #5b6680;
+    --tf-brand: #1D49E8;
+    --tf-brand-strong: #1638C4;
+    --tf-on-brand: #f4f1ec;
+    --tf-feld: #7a8296;
+    --tf-radius-sm: 6px;
+    --tf-radius-md: 14px;
+    --tf-font-display: "Playfair Display", Georgia, serif;
+    --tf-font-sans: Inter, system-ui, sans-serif;
+
+    /* GHL setzt seine Farben mit !important auf :root, html:root ist spezifischer */
+    --appointment_widgets-primary-color: var(--tf-brand) !important;
+    --appointment_widgets-background-color: var(--tf-surface) !important;
+    --appointment_widgets-border-color: var(--tf-line) !important;
+    --appointment_widgets-light-primary-color: var(--tf-surface-alt) !important;
+    --appointment_widgets-text-color: var(--tf-ink) !important;
+    --appointment_widgets-light-text-color: var(--tf-ink-muted) !important;
+  }
+
+  #appointment_widgets--revamp :is(div, span, p, label, input, textarea, select, button, h1, h2, h3, h4, li, a, td, th) {
+    font-family: var(--tf-font-sans) !important;
+  }
+
+  /* Eingebettet: keine Karte in der Karte */
+  html.tf-eingebettet, html.tf-eingebettet body { background: transparent !important; }
+  .tf-eingebettet #appointment_widgets--revamp { padding: 0 !important; }
+  .tf-eingebettet .appointment_widgets--revamp--inner {
+    max-width: none !important; width: 100% !important; margin: 0 !important;
+    border: 0 !important; border-radius: 0 !important; box-shadow: none !important;
+  }
+  @media (min-width: 768px) {
+    .tf-eingebettet .appointment_widgets--revamp--info-container { padding: 32px !important; }
+    .tf-eingebettet .appointment_widgets--revamp--steps { padding-top: 32px !important; padding-left: 32px !important; }
+  }
+
+  /* Überschriften in Playfair, wie auf der VSL */
+  #appointment_widgets--revamp .widgets--service-name {
+    font-family: var(--tf-font-display) !important; font-style: italic; font-weight: 400;
+    font-size: 28px; line-height: 1.15; color: var(--tf-ink);
+  }
+  #appointment_widgets--revamp :is(.label-select-date, h4.text-info) {
+    font-family: var(--tf-font-display) !important; font-weight: 400;
+    font-size: 26px; line-height: 1.2; color: var(--tf-ink); letter-spacing: 0;
+  }
+  #appointment_widgets--revamp h4.text-info { margin-bottom: 16px; }
+
+  /* Linke Spalte */
+  #appointment_widgets--revamp .booking-info-value { color: var(--tf-ink-muted); font-weight: 600; }
+  #appointment_widgets--revamp .appointment_widgets--revamp--booking-info svg :is(path, circle, rect, line) { stroke: var(--tf-brand); }
+  /* Die Beschreibung steht am Desktop links, mobil im Infokasten */
+  #appointment_widgets--revamp :is(.widgets--service-description, .calendar-description) :is(p, span, mark) {
+    font-size: 15px !important; line-height: 24px !important; color: var(--tf-ink-muted) !important;
+  }
+  /* Kein Neongrün: hervorgehoben wird durch Gewicht */
+  #appointment_widgets--revamp :is(.widgets--service-description, .calendar-description) mark {
+    background: transparent !important; color: var(--tf-ink) !important; font-weight: 600;
+  }
+  #appointment_widgets--revamp .appointment_widgets--revamp--back-button { border-color: var(--tf-line); color: var(--tf-brand); }
+
+  /* Monatsblatt */
+  #appointment_widgets--revamp .vdpPeriodControl > button { font-size: 16px; font-weight: 600; color: var(--tf-ink); }
+  #appointment_widgets--revamp .vdpHeadCellContent {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--tf-ink-muted);
+  }
+  #appointment_widgets--revamp .vdpCell.selectable .vdpCellContent { background: var(--tf-surface-alt); color: var(--tf-brand); font-weight: 600; }
+  #appointment_widgets--revamp .vdpCell.selectable:hover .vdpCellContent,
+  #appointment_widgets--revamp .vdpCell.selected .vdpCellContent { background: var(--tf-brand); color: var(--tf-on-brand); }
+
+  /* Uhrzeiten als Sekundärbuttons, die Wahl als Primärbutton */
+  #appointment_widgets--revamp .widgets-time-slot > span {
+    border: 1px solid var(--tf-brand) !important; border-radius: var(--tf-radius-sm) !important;
+    background: var(--tf-surface); color: var(--tf-brand); font-size: 15px; font-weight: 600;
+    font-variant-numeric: tabular-nums; transition: background-color .15s ease;
+  }
+  #appointment_widgets--revamp .widgets-time-slot:not(.actived) > span:hover { background: var(--tf-surface-alt); }
+  #appointment_widgets--revamp .widgets-time-slot.actived > span {
+    background: var(--tf-surface-alt) !important; border-color: var(--tf-surface-alt) !important; color: var(--tf-ink) !important;
+  }
+  #appointment_widgets--revamp :is(.selected-slot, #schedule-meeting-button) {
+    background: var(--tf-brand) !important; border: 1px solid var(--tf-brand) !important; color: var(--tf-on-brand) !important;
+    border-radius: var(--tf-radius-sm) !important; font-size: 15px; font-weight: 600; transition: background-color .15s ease;
+  }
+  #appointment_widgets--revamp :is(.selected-slot, #schedule-meeting-button):hover {
+    background: var(--tf-brand-strong) !important; border-color: var(--tf-brand-strong) !important;
+  }
+  #appointment_widgets--revamp #schedule-meeting-button { padding: 14px 24px; height: auto; font-size: 16px; }
+  #appointment_widgets--revamp .selected-slot > div::after,
+  #appointment_widgets--revamp #schedule-meeting-button::after { content: "→"; margin-left: 8px; }
+
+  /* Formular */
+  #appointment_widgets--revamp :is(.field-label, .label-alignment) { color: var(--tf-ink); font-weight: 600; }
+  #appointment_widgets--revamp .form-builder--item :is(input, textarea, select) {
+    border: 1px solid var(--tf-feld) !important; border-radius: var(--tf-radius-sm) !important; color: var(--tf-ink);
+  }
+  #appointment_widgets--revamp .form-builder--item :is(input, textarea, select):focus {
+    border-color: var(--tf-brand) !important; outline: 2px solid var(--tf-brand); outline-offset: 2px; box-shadow: none !important;
+  }
+  #appointment_widgets--revamp :is(button, a):focus-visible { outline: 2px solid var(--tf-brand); outline-offset: 2px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    #appointment_widgets--revamp * { transition: none !important; }
+  }
+</style>

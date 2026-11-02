@@ -41,8 +41,8 @@
 
   /* Kalender */
   .buchung { background: var(--surface-alt); padding-block: var(--space-16) var(--space-28); }
-  /* Ohne eigenen Rand: das GHL-Widget zeichnet seine Linie selbst */
-  .buchung__karte { background: var(--surface-raised); border-radius: var(--radius-md); overflow: hidden; }
+  /* Die Seite zeichnet die Karte, das GHL-Widget liegt flach darin (Stil aus _ghl-kalender.html) */
+  .buchung__karte { background: var(--surface-raised); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-card); }
   .buchung__karte iframe { width: 100%; border: 0; overflow: hidden; min-height: 680px; display: block; background: #fff; }
 
   /* Belege */
